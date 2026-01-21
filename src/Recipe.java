@@ -10,6 +10,13 @@ public class Recipe {
     private final ArrayList<String> ingredientNames = new ArrayList<>();
     private final ArrayList<Double> ingredientAmounts = new ArrayList<>();
 
+    /**
+     * Create a new Recipe with the given name and number of servings.
+     *
+     * @param name the recipe name; must be non-null and not blank
+     * @param servings the number of servings; must be positive
+     * @throws IllegalArgumentException if {@code name} is null/blank or {@code servings} <= 0
+     */
     public Recipe(String name, int servings) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("name must be non-empty");
@@ -56,64 +63,101 @@ public class Recipe {
 }
 
 
+    /**
+     * Return the number of ingredient entries in this recipe.
+     *
+     * @return the count of ingredients added to this recipe
+     */
     public int totalIngredientCount() {
         // TODO: return number of ingredient entries
         return ingredientNames.size();
-        //throw new UnsupportedOperationException("TODO");
     }
 
      
-public void scaleToServings(int newServings) {
-
-           // TODO:
+    /**
+     * Scale all ingredient amounts to match a new number of servings.
+     *
+     * <p>The method multiplies each ingredient amount by the factor
+     * {@code (double)newServings / servings} and updates the stored
+     * number of servings.
+     *
+     * @param newServings the desired number of servings; must be positive
+     * @throws IllegalArgumentException if {@code newServings} <= 0
+     */
+    public void scaleToServings(int newServings) {
+        // TODO:
         // - If newServings <= 0 throw IllegalArgumentException
         // - Compute factor = (double) newServings / servings
         // - Multiply each ingredient amount by factor
         // - Update servings
-    if (newServings <= 0) {
-        throw new IllegalArgumentException("Servings must be greater than 0");
+
+        if (newServings <= 0) {
+            throw new IllegalArgumentException("Servings must be greater than 0");
+        }
+
+        double factor = (double) newServings / servings;
+
+        for (int i = 0; i < ingredientAmounts.size(); i++) {
+            double scaled = ingredientAmounts.get(i) * factor;
+            ingredientAmounts.set(i, scaled);
+        }
+
+        servings = newServings;
     }
-
-    double factor = (double) newServings / servings;
-
-    for (int i = 0; i < ingredientAmounts.size(); i++) {
-        double scaled = ingredientAmounts.get(i) * factor;
-        ingredientAmounts.set(i, scaled);
-    }
-
-    servings = newServings;
-}
      
+    /**
+     * Return a human-readable representation of the recipe.
+     *
+     * <p>Format:
+     * <pre>
+     * &lt;name&gt; (serves &lt;servings&gt;)
+     * - &lt;amount&gt; &lt;ingredient&gt;
+     * - ...
+     * </pre>
+     * Amounts are formatted using {@link #formatAmount(double)}.
+     *
+     * @return the formatted recipe string
+     */
+    @Override
     public String toString() {
-           // TODO:
+        // TODO:
         // Return:
         // <name> (serves <servings>)
         // - <amount> <ingredient>
         // ...
         //
         // Use formatAmount(double) helper for printing amounts.
-    StringBuilder sb = new StringBuilder();
 
-    // First line: <name> (serves <servings>)
-    sb.append(name).append(" (serves ").append(servings).append(")\n");
+        StringBuilder sb = new StringBuilder();
 
-    // Each ingredient line:
-    // - <amount> <ingredient>
-    for (int i = 0; i < ingredientNames.size(); i++) {
-        sb.append("- ")
-          .append(formatAmount(ingredientAmounts.get(i)))
-          .append(" ")
-          .append(ingredientNames.get(i))
-          .append("\n");
+        sb.append(name).append(" (serves ").append(servings).append(")\n");
+
+        for (int i = 0; i < ingredientNames.size(); i++) {
+            sb.append("- ")
+              .append(formatAmount(ingredientAmounts.get(i)))
+              .append(" ")
+              .append(ingredientNames.get(i))
+              .append("\n");
+        }
+
+        return sb.toString();
     }
-
-    return sb.toString();
-}
 
     
 
-     private String formatAmount(double x) {
-           // Spec:
+    /**
+     * Format an amount for display.
+     *
+     * <p>If the value is an integer (e.g. {@code 200.0}) it is formatted
+     * without a decimal point. Otherwise the value is rounded to two
+     * decimal places and trailing zeros are trimmed (for example
+     * {@code 0.625} -> {@code "0.63"}).
+     *
+     * @param x the amount to format
+     * @return a compact string representation of the amount
+     */
+    private String formatAmount(double x) {
+        // Spec:
         // - If x is an integer value, print without decimals.
         // - Else print with up to 2 decimals, trimming trailing zeros.
         //
@@ -124,28 +168,25 @@ public void scaleToServings(int newServings) {
         // 1.333 -> "1.33"
         //
         // TODO: implement.
-    // If x is an integer (like 200.0, 3.0, etc)
-    if (x == Math.floor(x)) {
-        return String.valueOf((long) x);
-    }
 
-    // Otherwise round to 2 decimals
-    double rounded = Math.round(x * 100.0) / 100.0;
-
-    // Convert to string
-    String s = String.valueOf(rounded);
-
-    // Trim trailing zeros
-    if (s.contains(".")) {
-        while (s.endsWith("0")) {
-            s = s.substring(0, s.length() - 1);
+        if (x == Math.floor(x)) {
+            return String.valueOf((long) x);
         }
-        if (s.endsWith(".")) {
-            s = s.substring(0, s.length() - 1);
-        }
-    }
 
-    return s;
-}
+        double rounded = Math.round(x * 100.0) / 100.0;
+
+        String s = String.valueOf(rounded);
+
+        if (s.contains(".")) {
+            while (s.endsWith("0")) {
+                s = s.substring(0, s.length() - 1);
+            }
+            if (s.endsWith(".")) {
+                s = s.substring(0, s.length() - 1);
+            }
+        }
+
+        return s;
+    }
 
 }

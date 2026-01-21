@@ -1,5 +1,10 @@
 // src/Main.java
 public class Main {
+    /**
+     * Simple runner for the `Recipe` demo.
+     *
+     * @param args command-line arguments (unused)
+     */
     public static void main(String[] args) {
         Recipe r = new Recipe("Pasta Aglio e Olio", 2);
 
