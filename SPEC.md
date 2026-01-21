@@ -20,7 +20,7 @@ A recipe has:
 You must implement:
 - `addIngredient(String ingredientName, double amount)`
 - `scaleToServings(int newServings)`
-- `toPrettyString()`
+- `toString()`
 - `totalIngredientCount()`
 
 ### addIngredient
@@ -36,7 +36,7 @@ Scales all ingredient amounts proportionally.
 - Update servings to `newServings`.
 - If `newServings <= 0`, throw `IllegalArgumentException`.
 
-### toPrettyString
+### toString
 Returns a multi-line formatted string:
 
 Format:
