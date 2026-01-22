@@ -21,6 +21,8 @@ Suggested workflow:
 
 **Note**: Students will not be able to Push changes (save to the server) because they are not contributors to this repository. Normally, sample code would first be Forked into a student’s own repository and then cloned locally. A fork is a server-side copy of a repository created under your own GitHub account, allowing you to make changes, Commit them, and Push updates without affecting the original project. We will use that workflow later in the course, though students are welcome to Fork this repo if they with to experiment.
 
+The original files and workflow in this repository (Day 1) were created with the help of a [ChatGPT Session](https://chatgpt.com/share/696a5966-6000-8011-a070-388192adf348).
+
 ## Day 2+ From Single Class to Application
 
 Once the `Recipe` class is complete and behaving correctly, we will begin moving beyond a single-class exercise and toward a small but complete application.
@@ -87,4 +89,4 @@ cmps357-sp26-first-example/
       └─ ConsoleUI.java   (or JavaFXUI.java, or WebUI adapter later)
 ```
 
-The files and workflow in this repository were created with the help of a [ChatGPT Session](https://chatgpt.com/share/696a5966-6000-8011-a070-388192adf348).
+The updated files and workflow in this repository (Day 2+) were created with the help of a [ChatGPT Session](https://chatgpt.com/share/6972a438-2e10-8011-9a61-eef40179e2c6).
