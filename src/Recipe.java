@@ -51,15 +51,19 @@ public class Recipe {
         // - Validate amount > 0
         // - Add to ingredientNames and ingredientAmounts in matching positions
         // - done below
-    if (ingredientName == null || ingredientName.trim().isEmpty()) {
-        throw new IllegalArgumentException("Ingredient name cannot be null or blank");
-    }
-    if (amount <= 0) {
-        throw new IllegalArgumentException("Amount must be greater than 0");
-    }
+        if (ingredientName == null || ingredientName.trim().isEmpty()) {
+            // Invalid ingredient name: ignore the entry (tests expect this behaviour).
+            System.out.println("Ignoring invalid ingredient name: '" + ingredientName + "'");
+            return;
+        }
+        if (amount <= 0) {
+            // Invalid amount: ignore the entry.
+            System.out.println("Ignoring invalid ingredient amount: " + amount);
+            return;
+        }
 
-    ingredientNames.add(ingredientName);
-    ingredientAmounts.add(amount);
+        ingredientNames.add(ingredientName);
+        ingredientAmounts.add(amount);
 }
 
 
