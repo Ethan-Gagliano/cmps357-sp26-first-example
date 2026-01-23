@@ -36,7 +36,7 @@ Additional low-effort improvements before Stage 2:
 
 User: Update the TODO.md accordingly
 
-GitHub Copilot: Read [TODO.md](TODO.md)
+GitHub Copilot: Read [TODO.md](/TODO.md)
 
 Using "Apply Patch"
 
@@ -52,20 +52,20 @@ User: Is junit or other testing indicated in this repo?
 
 GitHub Copilot: Searched codebase for "Is junit or other testing indicated in this repo?", 12 results
 
-There’s no test framework or test sources in this repo right now (no `test/` folder, build config, or JUnit dependencies). The only mention of tests is a future task in [`TODO.md`](TODO.md "TODO.md") suggesting to add a minimal JUnit harness.
+There’s no test framework or test sources in this repo right now (no `test/` folder, build config, or JUnit dependencies). The only mention of tests is a future task in [`TODO.md`](/TODO.md "TODO.md") suggesting to add a minimal JUnit harness.
 
 ---
 
 
 User: Implement the testing suggested by TODO
 
-GitHub Copilot: Read [Recipe.java](src/Recipe.java)
+GitHub Copilot: Read [Recipe.java](/src/Recipe.java)
 
-Read [Main.java](src/Main.java)
+Read [Main.java](/src/Main.java)
 
-Read [TODO.md](TODO.md)
+Read [TODO.md](/TODO.md)
 
-Created [RecipeTest.java](test/RecipeTest.java)
+Created [RecipeTest.java](/test/RecipeTest.java)
 
 Using "Apply Patch"
 
@@ -91,16 +91,16 @@ Made changes.
 
 User: Add the testing config to vsocde settings
 
-GitHub Copilot: Read [.vscode](.vscode)
+GitHub Copilot: Read [.vscode](/.vscode)
 
-Read [settings.json](.vscode/settings.json)
+Read [settings.json](/.vscode/settings.json)
 
 Using "Apply Patch"
 
 
 
 
-Created [tasks.json](.vscode/tasks.json)
+Created [tasks.json](/.vscode/tasks.json)
 
 Added VS Code test configuration:
 
@@ -128,7 +128,7 @@ Made changes.
 
 User: Is there a way to have the run-tests accessible through the play button or other gui than the `Run Tasks` of the command pallete?
 
-GitHub Copilot: Created [launch.json](.vscode/launch.json)
+GitHub Copilot: Created [launch.json](/.vscode/launch.json)
 
 You now have GUI run targets:
 
@@ -166,11 +166,11 @@ Made changes.
 
 User: Add a horizontal line before every `User:` prompt
 
-GitHub Copilot: Read [PLAN_TRANSCRIPT.md](PLAN_TRANSCRIPT.md)
+GitHub Copilot: Read [PLAN_TRANSCRIPT.md](/docs/notes/PLAN_TRANSCRIPT.md)
 
 Using "Apply Patch"
 
-Read [PLAN_TRANSCRIPT.md](PLAN_TRANSCRIPT.md)
+Read [PLAN_TRANSCRIPT.md](/docs/notes/PLAN_TRANSCRIPT.md)
 
 Using "Apply Patch"
 
