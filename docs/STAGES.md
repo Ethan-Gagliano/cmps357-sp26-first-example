@@ -32,6 +32,9 @@ Implement the foundational data model and required behavior for a single recipe.
 - Scaling updates ingredient amounts proportionally without rounding stored values.
 - Invalid inputs do not corrupt internal state.
 
+**Progress**
+- In progress (current stage)
+
 ---
 
 ## Stage 2: Recipe Collection Management
@@ -55,6 +58,9 @@ Manage multiple recipes as a collection.
 - Removal logic correctly identifies recipes by name.
 - No implicit sorting is enforced at the data level.
 
+**Progress**
+- Not started
+
 ---
 
 ## Stage 3: Searching and Sorting
@@ -75,6 +81,9 @@ Allow users to locate and view recipes efficiently.
 - Sorting is applied only when presenting results.
 - Recipe insertion order remains unchanged internally.
 
+**Progress**
+- Not started
+
 ---
 
 ## Stage 4: Shopping Cart Aggregation
@@ -94,6 +103,9 @@ Generate a combined ingredient list from multiple recipes.
 - Ingredients with the same normalized name are summed.
 - Aggregation does not modify original recipes.
 - Output formatting follows the same amount rules as recipes.
+
+**Progress**
+- Not started
 
 ---
 
@@ -116,6 +128,9 @@ Persist and restore application state using files.
 - Stored numeric values remain unformatted.
 - Loaded data is validated before use.
 - Invalid data is handled according to documented policy.
+
+**Progress**
+- Not started
 
 ---
 
@@ -142,6 +157,9 @@ Provide a usable front-end for interacting with the system.
 - All previously implemented features are accessible through the UI.
 - Sorting and formatting rules are consistently applied.
 
+**Progress**
+- Not started
+
 ---
 
 ## Stage 7: Refinement and Extension
@@ -160,10 +178,14 @@ Stabilize and improve the system.
 - Ingredient-level search
 - Unit tests for aggregation and persistence
 - Optional identifiers for recipes
+- Refactor classes into package `cmps357.sp26` to align namespaces
 
 **Acceptance Criteria**
 - Existing behavior remains unchanged unless explicitly extended.
 - Documentation remains consistent with implementation.
+
+**Progress**
+- Not started
 
 ---
 
