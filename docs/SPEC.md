@@ -45,9 +45,19 @@ Format:
 - <amount> <ingredient>
 ...
 
-Example output below.
+## Recipe Collection Features
+Beyond a single recipe, the application must support:
+- adding recipes to a recipe list
+- removing recipes from the list
+- searching recipes by name (case-insensitive, partial matches)
+- sorting recipes by name when presenting them
+- generating a shopping cart that aggregates ingredients from multiple recipes
+- reading and writing the recipe list to a file using JSON format
 
-## Expected Output
+Details for these features are defined in `ARCHITECTURE.md`, `DATA_MODEL.md`, and `STAGES.md`.
+
+
+## Previous Expected Output
 When you run `Main`, output must be exactly:
 
 ```
