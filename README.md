@@ -1,5 +1,8 @@
 # cmps357-sp26-first-example
-
+ **NOTE**: This repository is provided as an example only.  
+   - Do **not** fork or clone this repository for your PA1 submission.  
+   - The official PA1 repository will be released separately at a later date through GitHub Classroom and may differ in structure, instructions, and requirements from this example.
+  
 ## Project Requirements
  - Java IDE such as **IntelliJ Community Edition** [Windows](https://download.jetbrains.com/idea/ideaIC-2025.2.6.1.exe?_cl=MTsxOzE7c2tod09qdG1hNXpQbERWcGpJWGlZUUZ6Ym0zUW0yVTdpSGxRWHE3RU85RVJPaGtGd2tQSmNRTW13NGpSb0lXbTs=&_gl=1*1uc1dra*_gcl_au*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*FPAU*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*_ga*MTk5NDUxODMxNy4xNzY4NTgwNjIy*_ga_9J976DJZ68*czE3Njg1ODA2MTkkbzEkZzEkdDE3Njg1ODA2NjkkajEwJGwwJGgw) [Linux](https://download.jetbrains.com/idea/ideaIC-2025.2.6.1-aarch64.tar.gz?_gl=1*njar6m*_gcl_au*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*FPAU*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*_ga*MTk5NDUxODMxNy4xNzY4NTgwNjIy*_ga_9J976DJZ68*czE3Njg1ODA2MTkkbzEkZzEkdDE3Njg1ODA2NjkkajEwJGwwJGgw) [macOS (Intel)](https://download.jetbrains.com/idea/ideaIC-2025.2.6.1.dmg?_gl=1*ue2abp*_gcl_au*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*FPAU*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*_ga*MTk5NDUxODMxNy4xNzY4NTgwNjIy*_ga_9J976DJZ68*czE3Njg1ODA2MTkkbzEkZzEkdDE3Njg1ODA2NjkkajEwJGwwJGgw) [macOS (Apple Silicone)](https://download.jetbrains.com/idea/idea-2025.3.1.1-aarch64.dmg?_gl=1*ue2abp*_gcl_au*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*FPAU*MTI0NzgwMjk5NS4xNzY4NTgwNjIy*_ga*MTk5NDUxODMxNy4xNzY4NTgwNjIy*_ga_9J976DJZ68*czE3Njg1ODA2MTkkbzEkZzEkdDE3Njg1ODA2NjkkajEwJGwwJGgw)
  - Java SDK such as Azul Zulu
