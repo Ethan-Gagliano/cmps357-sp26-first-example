@@ -103,15 +103,17 @@ UI code must depend on service classes, not on persistence or internal data stru
 
 ## Documentation Requirements
 
-All required documentation files **must be present and completed**:
+All required documentation files **must be present and completed** as described in the course syllabus. Provide the following files in the repository tree:
 
 ```
-docs/
-├─ SPEC.md
-├─ ARCHITECTURE.md
-├─ DATA_MODEL.md
-├─ STAGES.md
-└─ TESTING.md
+/ (repo root)
+├─ AUTHORS.md
+├─ README.md
+└─ docs/
+  ├─ STAGES.md
+  ├─ TRANSCRIPT.md
+  ├─ REFLECTION.md
+  └─ EXAMPLES.md
 ```
 
 Your implementation must be consistent with these documents.
