@@ -101,16 +101,19 @@ Allow users to locate, filter, and view recipes efficiently using flexible searc
 - Sorting is applied only when presenting results. ✓
 - Recipe insertion order remains unchanged internally. ✓
 - Case-insensitive name search (partial matches) is supported. ✓
-- Ingredient-based and multi-token searches return correct results. ◻︎
-- Stable secondary sort behavior is implemented. ◻︎
+- Ingredient-based and multi-token searches return correct results. ✓
+- Stable secondary sort behavior is implemented. ✓
 
 ### Progress
-- Partially complete  
+- Complete
   - Case-insensitive name search implemented in `RecipeBook`
+  - Whitespace trimming in search queries
+  - Ingredient-based search implemented (`searchByIngredient`)
+  - Multi-token search implemented (`searchByTokens`)
   - Front-end name-based sorting implemented via `RecipeSorter`
-  - Ingredient-based search not yet implemented
-  - Multi-token search not yet implemented
-  - Secondary sort key for deterministic ordering not yet implemented
+  - Support for ascending (A-Z) and descending (Z-A) sort order
+  - Stage3Demo.java created to demonstrate all features
+  - Comprehensive tests added for all search and sort functionality
 
 ---
 

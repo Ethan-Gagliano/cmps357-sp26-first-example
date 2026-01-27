@@ -30,9 +30,13 @@
 
 ### Stage 3: Searching and Sorting (COMPLETE)
 - [x] Implemented case-insensitive search in RecipeBook
+- [x] Added whitespace trimming to search queries
+- [x] Implemented ingredient-based search (searchByIngredient)
+- [x] Implemented multi-token search (searchByTokens)
 - [x] Created RecipeSorter utility (src/RecipeSorter.java) for sorting recipes by name
-- [x] Added tests (test/RecipeSorterTest.java)
-- [x] Created Stage2Demo.java to demonstrate functionality
+- [x] Added reverse sort support (Z-A)
+- [x] Added comprehensive tests (test/RecipeSorterTest.java, test/RecipeBookTest.java)
+- [x] Created Stage3Demo.java to demonstrate all Stage 3 functionality
 - [x] All Stage 3 acceptance criteria met
 
 ### Documentation Updates
