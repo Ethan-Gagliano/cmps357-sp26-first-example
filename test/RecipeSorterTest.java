@@ -10,6 +10,7 @@ public class RecipeSorterTest {
         testSortByNameCaseInsensitive();
         testSortByNameDoesNotMutate();
         testSortByNameNullInput();
+        testSortByNameReverse();
         System.out.println("All RecipeSorter tests passed.");
     }
 
@@ -57,6 +58,26 @@ public class RecipeSorterTest {
         List<Recipe> sorted = RecipeSorter.sortByName(null);
         assertNotNull("null input returns empty list", sorted);
         assertEquals("null input returns empty", 0, sorted.size());
+    }
+
+    private static void testSortByNameReverse() throws Exception {
+        List<Recipe> recipes = new ArrayList<>();
+        recipes.add(new Recipe("Zebra Cake", 8));
+        recipes.add(new Recipe("Apple Pie", 6));
+        recipes.add(new Recipe("Muffins", 12));
+        
+        // Test reverse sort (Z-A)
+        List<Recipe> sorted = RecipeSorter.sortByName(recipes, true);
+        
+        assertEquals("reverse sorted size", 3, sorted.size());
+        assertEquals("reverse first recipe", "Zebra Cake", getRecipeName(sorted.get(0)));
+        assertEquals("reverse second recipe", "Muffins", getRecipeName(sorted.get(1)));
+        assertEquals("reverse third recipe", "Apple Pie", getRecipeName(sorted.get(2)));
+        
+        // Test normal sort (A-Z) with false parameter
+        List<Recipe> sortedAsc = RecipeSorter.sortByName(recipes, false);
+        assertEquals("ascending first recipe", "Apple Pie", getRecipeName(sortedAsc.get(0)));
+        assertEquals("ascending third recipe", "Zebra Cake", getRecipeName(sortedAsc.get(2)));
     }
 
     // Helper methods

@@ -10,6 +10,9 @@ public class RecipeBookTest {
         testGetAllRecipes();
         testSize();
         testSearchByName();
+        testSearchByNameWithWhitespace();
+        testSearchByIngredient();
+        testSearchByTokens();
         System.out.println("All RecipeBook tests passed.");
     }
 
@@ -100,6 +103,85 @@ public class RecipeBookTest {
         
         List<Recipe> results5 = book.searchByName(null);
         assertEquals("null query", 0, results5.size());
+    }
+
+    private static void testSearchByNameWithWhitespace() {
+        RecipeBook book = new RecipeBook();
+        book.addRecipe(new Recipe("Chocolate Cake", 8));
+        
+        List<Recipe> results = book.searchByName("  cake  ");
+        assertEquals("whitespace trimmed", 1, results.size());
+        
+        List<Recipe> results2 = book.searchByName("   ");
+        assertEquals("whitespace-only query", 0, results2.size());
+    }
+
+    private static void testSearchByIngredient() {
+        RecipeBook book = new RecipeBook();
+        
+        Recipe pasta = new Recipe("Pasta", 2);
+        pasta.addIngredient("spaghetti", 200);
+        pasta.addIngredient("garlic", 3);
+        
+        Recipe cake = new Recipe("Cake", 8);
+        cake.addIngredient("flour", 2);
+        cake.addIngredient("eggs", 3);
+        
+        book.addRecipe(pasta);
+        book.addRecipe(cake);
+        
+        List<Recipe> results = book.searchByIngredient("garlic");
+        assertEquals("ingredient search", 1, results.size());
+        
+        List<Recipe> results2 = book.searchByIngredient("GARLIC");
+        assertEquals("case-insensitive ingredient", 1, results2.size());
+        
+        List<Recipe> results3 = book.searchByIngredient("gg");
+        assertEquals("partial ingredient match", 1, results3.size());
+        
+        List<Recipe> results4 = book.searchByIngredient("   ");
+        assertEquals("empty ingredient query", 0, results4.size());
+    }
+
+    private static void testSearchByTokens() {
+        RecipeBook book = new RecipeBook();
+        
+        Recipe pasta = new Recipe("Pasta Aglio e Olio", 2);
+        pasta.addIngredient("spaghetti", 200);
+        pasta.addIngredient("garlic", 3);
+        pasta.addIngredient("olive oil", 0.25);
+        
+        Recipe bread = new Recipe("Garlic Bread", 4);
+        bread.addIngredient("bread", 1);
+        bread.addIngredient("garlic", 4);
+        bread.addIngredient("butter", 4);
+        
+        Recipe cake = new Recipe("Cake", 8);
+        cake.addIngredient("flour", 2);
+        cake.addIngredient("eggs", 3);
+        
+        book.addRecipe(pasta);
+        book.addRecipe(bread);
+        book.addRecipe(cake);
+        
+        // Search for "garlic oil" should only match pasta (has both)
+        List<Recipe> results = book.searchByTokens("garlic oil");
+        assertEquals("multi-token search", 1, results.size());
+        
+        // Search for "garlic" should match both pasta and bread
+        List<Recipe> results2 = book.searchByTokens("garlic");
+        assertEquals("single token search", 2, results2.size());
+        
+        // Search for "flour eggs" should match cake
+        List<Recipe> results3 = book.searchByTokens("flour eggs");
+        assertEquals("ingredient-only tokens", 1, results3.size());
+        
+        // Search for "bread garlic" should match bread (in name and ingredient)
+        List<Recipe> results4 = book.searchByTokens("bread garlic");
+        assertEquals("name and ingredient tokens", 1, results4.size());
+        
+        List<Recipe> results5 = book.searchByTokens("   ");
+        assertEquals("empty token query", 0, results5.size());
     }
 
     // Helper methods
